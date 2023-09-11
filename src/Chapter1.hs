@@ -217,7 +217,7 @@ True :: Bool
 42 :: Num a => a
 
 A pair of boolean and char:
->>> :t (True, 'x')
+>>> :t (True,'x')
 (True,'x') :: (Bool,Char)
 
 Boolean negation:
@@ -452,10 +452,7 @@ Implement the function that takes an integer value and returns the next 'Int'.
   function body with the proper implementation.
 -}
 next :: Int -> Int
-next x = error "next: not implemented!"
-
-next' :: Num a => a -> a
-next' x = x + 1
+next x = x + 1
 
 {- |
 After you've implemented the function (or even during the implementation), you
@@ -485,9 +482,6 @@ Implement a function that returns the last digit of a given number.
 >>> lastDigit 42
 2
 
-lastDigit' :: Integral a => a -> a
-lastDigit' x = mod x 10
-
 🕯 HINT: use the `mod` function
 
 ♫ NOTE: You can discover possible functions to use via Hoogle:
@@ -499,8 +493,8 @@ lastDigit' x = mod x 10
   whether it works for you!
 -}
 -- DON'T FORGET TO SPECIFY THE TYPE IN HERE
-lastDigit :: Int -> a
-lastDigit n = error "lastDigit: Not implemented!"
+lastDigit ::Integral a => a -> a
+lastDigit x = x `mod` 10
 
 {- |
 =⚔️= Task 6
